@@ -41,25 +41,25 @@ export class AppComponent implements OnInit {
       if (this.isEditMode) {
         this.api.updateUser(this.currentUserId!, this.userForm.value).subscribe({
           next: (res) => {
-            alert('Product updated successfully');
+            // alert('updated successfully');
             this.userForm.reset();
             this.isEditMode = false;
             this.currentUserId = null;
             this.getAllUserForm();
           },
           error: () => {
-            alert('Error while updating the product');
+            // alert('Error while updating');
           }
         });
       } else {
         this.api.postUser(this.userForm.value).subscribe({
           next: (res) => {
-            alert('Product added successfully');
+            // alert('add successfully');
             this.userForm.reset();
             this.getAllUserForm();
           },
           error: () => {
-            alert('Error while adding the product');
+            // alert('Error');
           }
         });
       }
